@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="toolbar">
+  <a mat-button [routerLink]="['/']">
+    <mat-icon>developer_mode</mat-icon>
+    <span class="menu-item-name"> Brakets Validator</span>
+  </a>
+
+  <a mat-button [routerLink]="['forecast']">
+    <mat-icon>cloud</mat-icon>
+    <span class="menu-item-name"> Forecast</span>
+  </a>
+
+  <a mat-button href="https://github.com/Arxero/playtech-tasks" target="_blank">
+    GitHub
+    <mat-icon>open_in_new</mat-icon>
+  </a>
+
+</mat-toolbar>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

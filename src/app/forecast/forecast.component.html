@@ -1,0 +1,39 @@
+<mat-grid-list
+  [cols]="breakpoint"
+  [gutterSize]="10"
+  rowHeight="2:4.3"
+  (window:resize)="onResize($event)"
+>
+  <ng-container *ngFor="let item of forecast">
+    <mat-grid-tile>
+      <div class="day-container">
+        <div class="day">{{ item.day }}</div>
+        <div class="description">{{ item.desciption }}</div>
+        <div class="image">
+          <img [src]="item.image" alt="{{ item.day }} image" />
+        </div>
+
+        <div class="temps">
+          <span class="high">{{ item.max | number }}°</span> /
+          <span class="low">{{ item.min | number }}°</span>
+        </div>
+
+        <div class="details-container">
+          <button mat-icon-button color="primary" (click)="onInfo(item)">
+            <mat-icon>{{ item.icon }}</mat-icon>
+          </button>
+
+          <mat-card class="info" *ngIf="item.details.isOpened">
+            <div>Chance for rain: {{ item.details.chanceForRain }}%</div>
+            <mat-divider></mat-divider>
+            <div>Wind Speed: {{ item.details.windSpeed }} km/h</div>
+            <mat-divider></mat-divider>
+            <div>Sunrise: {{ item.details.sunrise }} AM</div>
+          </mat-card>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </ng-container>
+</mat-grid-list>
+
+<mat-slide-toggle labelPosition="before" (change)="onSlide($event)">{{slideToggleText}}</mat-slide-toggle>

@@ -1,0 +1,27 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+:host ::ng-deep .mat-form-field-label {
+  color: #DADADA;
+  padding: 5px;
+}
+
+textarea {
+  background: #222222;
+  padding: 10px !important;
+}
+
+.mat-raised-button[disabled]:not([class*=mat-elevation-z]) {
+  background: #222222;
+  color: #DADADA;
+}
+
+
